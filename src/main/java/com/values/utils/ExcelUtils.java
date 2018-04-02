@@ -356,9 +356,9 @@ public class ExcelUtils {
         List<String> result = new ArrayList<>();
         if (tmp != null) {
             tmp.forEach(map -> {
-                Collection<Object> arr = map.values();//一行Excel的值
-                String str = Joiner.on(",").join(arr);//一行Excellist转为String
-                String tempStr = Joiner.on(" ").join(arr);//去除带有空格的数据
+                Collection<Object> objCollection = map.values();//一行Excel的值
+                String str = Joiner.on(",").join(objCollection);//一行Excellist转为String
+                String tempStr = Joiner.on(" ").join(objCollection);//去除带有空格的数据
                 if (tempStr != null && StringUtils.isNotBlank(tempStr.trim())) {
                     result.add(str);
                 }
